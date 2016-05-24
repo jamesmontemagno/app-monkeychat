@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MonkeyChat.MainChatPage"
+             xmlns:local="clr-namespace:MonkeyChat;assembly=MonkeyChat">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <local:MyDataTemplateSelector x:Key="MessageTemplateSelector"></local:MyDataTemplateSelector>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <Grid RowSpacing="0" ColumnSpacing="0">
+	<Grid.RowDefinitions>
+    <RowDefinition Height="*"/>
+    <RowDefinition Height="Auto"/>
+  </Grid.RowDefinitions>
+    <ListView x:Name="MessagesListView" 
+            ItemTemplate="{StaticResource MessageTemplateSelector}" 
+            ItemsSource="{Binding Messages}"
+            HasUnevenRows="True" 
+            ItemSelected="MyListView_OnItemSelected"
+            ItemTapped="MyListView_OnItemTapped"
+            SeparatorVisibility="None"/>
+    <Grid x:Name="MessageControls" RowSpacing="1" ColumnSpacing="2" Padding="5" Grid.Row="1"
+          BackgroundColor="#EFEFF4"
+          VerticalOptions="FillAndExpand"
+          HorizontalOptions="FillAndExpand">
+	    <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+          </Grid.ColumnDefinitions>
+      <Entry Grid.Column="0" HeightRequest="25" Placeholder="Message" Text="{Binding OutGoingText}"></Entry>
+      <Button Grid.Column="1" Text="Send" Command="{Binding SendCommand}"></Button>
+    </Grid>
+  </Grid>
+</ContentPage>
