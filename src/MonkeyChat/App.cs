@@ -9,6 +9,8 @@ namespace MonkeyChat
 {
     public class App : Application
     {
+
+
         public App()
         {
             
@@ -33,5 +35,24 @@ namespace MonkeyChat
         {
             // Handle when your app resumes
         }
+    }
+
+    public static class ViewModelLocator
+    {
+        static MainChatViewModel chatVM;
+        public static MainChatViewModel MainChatViewModel
+        {
+            get
+            {
+                if (chatVM == null)
+                {
+                    chatVM = new MainChatViewModel();
+                    chatVM.InitializeMock();
+                }
+                return chatVM;
+
+            }
+        }
+
     }
 }

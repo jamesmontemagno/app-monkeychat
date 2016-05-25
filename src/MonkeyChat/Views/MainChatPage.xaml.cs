@@ -23,22 +23,15 @@ namespace MonkeyChat
                 var target = vm.Messages[vm.Messages.Count - 1];
                 MessagesListView.ScrollTo(target, ScrollToPosition.End, true);
             };
-
-
-            ToolbarItems.Add(new ToolbarItem
-            {
-                Text = "Location",
-                Command = vm.LocationCommand
-            });
            
         }
 
-        private void MyListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        void MyListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             MessagesListView.SelectedItem = null;
         }
 
-        private void MyListView_OnItemTapped(object sender, ItemTappedEventArgs e)
+        void MyListView_OnItemTapped(object sender, ItemTappedEventArgs e)
         {
             MessagesListView.SelectedItem = null;
 

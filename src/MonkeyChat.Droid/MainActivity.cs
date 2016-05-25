@@ -7,13 +7,10 @@ using ImageCircle.Forms.Plugin.Droid;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms;
 
-using Twilio.IPMessaging;
-using Twilio.Common;
-using System.Collections.Generic;
 
 namespace MonkeyChat.Droid
 {
-    [Activity(Label = "Monkey Chat", Icon = "@drawable/icon", Theme= "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Monkey Chat", Icon = "@mipmap/ic_launcher", Theme= "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)

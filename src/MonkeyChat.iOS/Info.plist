@@ -26,24 +26,6 @@
 	<string>com.refractored.monkeychat</string>
 	<key>CFBundleVersion</key>
 	<string>1.0.0</string>
-	<key>CFBundleIconFiles</key>
-	<array>
-		<string>Icon-60@2x</string>
-		<string>Icon-60@3x</string>
-		<string>Icon-76</string>
-		<string>Icon-76@2x</string>
-		<string>Default</string>
-		<string>Default@2x</string>
-		<string>Default-568h@2x</string>
-		<string>Default-Portrait</string>
-		<string>Default-Portrait@2x</string>
-		<string>Icon-Small-40</string>
-		<string>Icon-Small-40@2x</string>
-		<string>Icon-Small-40@3x</string>
-		<string>Icon-Small</string>
-		<string>Icon-Small@2x</string>
-		<string>Icon-Small@3x</string>
-	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
@@ -52,5 +34,7 @@
 	<string>1.0.0</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Get Location to Send to Friends</string>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcons.appiconset</string>
 </dict>
 </plist>

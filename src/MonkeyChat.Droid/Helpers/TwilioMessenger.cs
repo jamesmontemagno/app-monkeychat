@@ -20,7 +20,7 @@ namespace MonkeyChat.Droid
 
         public void SendMessage(string text)
         {
-            if (string.IsNullOrWhiteSpace(text))
+            if (string.IsNullOrWhiteSpace(text) || GeneralChannel == null)
                 return;
 
             var msg = GeneralChannel.Messages.CreateMessage(text);
@@ -95,7 +95,7 @@ namespace MonkeyChat.Droid
 
         void JoinGeneralChannel()
         {
-            GeneralChannel.Join(new StatusListener
+            GeneralChannel?.Join(new StatusListener
             {
                 SuccessHandler = () =>
                 {

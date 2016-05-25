@@ -5,16 +5,23 @@
 		x:Class="MonkeyChat.RoomsPage"
 		Title="Monkey Chat">
     <ContentPage.Content>
-		<StackLayout VerticalOptions="Center">      
-			<Button Text="Connect To General" Command="{Binding ConnectCommand}"/>
+		<Grid Padding="40">    
+			<Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+				<RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
 
-			<StackLayout IsVisible="{Binding IsBusy}" HorizontalOptions="Center">
+			<Image Source="logo.png" Aspect="AspectFit"/>
+			<Button Grid.Row="1" Text="Connect To General" Command="{Binding ConnectCommand}"/>
+
+			<StackLayout IsVisible="{Binding IsBusy}" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Start">
                 <StackLayout.Orientation>
-                <OnPlatform x:TypeArguments="StackOrientation" iOS="Horizontal"/>
-               </StackLayout.Orientation>
+                    <OnPlatform x:TypeArguments="StackOrientation" iOS="Horizontal"/>
+                </StackLayout.Orientation>
                 <ActivityIndicator IsRunning="{Binding IsBusy}" />
                 <Label Text="Connecting..." HorizontalOptions="Center" Style="{DynamicResource ListItemTextStyle}"/>
            </StackLayout>
-		</StackLayout>
+		</Grid>
     </ContentPage.Content>
 </ContentPage>
